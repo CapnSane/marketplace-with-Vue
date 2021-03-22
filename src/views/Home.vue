@@ -1,18 +1,19 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+    <p class="welcome-title">Welcome to the Hallowed Grounds Marketplace!</p>
+    <p class="welcome-subtitle">
+      <span>Here is the place that you can acquire the most</span>
+      <span>&nbsp; powerful Hallowed Grounds cards ever!</span>
+    </p>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-
-export default defineComponent({
-  name: 'Home',
-  components: {
-    HelloWorld,
+<script>
+export default {
+  data() {
+    return {
+      image: { backgroundImage: 'url(https://vuejs.org/src/assets/forest.jpg)' },
+    };
   },
-});
+};
 </script>
