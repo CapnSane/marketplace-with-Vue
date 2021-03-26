@@ -1,24 +1,32 @@
 <template>
-  <div id="home" class="home">
-    <p class="welcome-title">Welcome to the Hallowed Grounds Marketplace!</p>
-    <p class="welcome-subtitle">
-      <span>Here is the place that you can acquire the most</span>
-      <span>&nbsp; powerful Hallowed Grounds cards ever!</span>
-    </p>
+  <div id="header">
+    <span class="title">Hallowed Grounds Marketplace</span>
+    <div class="wrapper">
+      <input type="text" v-model="search" placeholder="Search cards.." />
+      <button class="search-button">Search Cards</button>
+      <router-link class="login-button" to="/login">Sign in</router-link> |
+      <router-link class="create-account-button" to="/createAccount">Sign up</router-link>
+      <router-link class="cart-button" to="/cart"><img /></router-link>
+    </div>
   </div>
+  <router-view/>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      image: { backgroundImage: 'url(https://vuejs.org/src/assets/forest.jpg)' },
-    };
-  },
-};
-</script>
+<style lang="scss">
 
-<style lang="scss" scoped>
+#header {
+  height: 45px;
+  background-color: rgba(171, 0, 171, 0.3);
+
+  a {
+    font-weight: bold;
+    color: #ffffffeb;
+
+    &.router-link-exact-active {
+      color: #42b983;
+    }
+  }
+}
 
 .title {
   float: left;
@@ -35,7 +43,7 @@ export default {
 
 .wrapper {
   position: relative;
-  margin-top: 8px;
+  padding-top: 8px;
   label {
     position: absolute;
     font-size: 12px;
@@ -79,6 +87,9 @@ export default {
   border-radius: 5px;
   margin-top: -10px;
   margin-left: 5px;
+}
+
+.account {
 }
 
 .login-button {
