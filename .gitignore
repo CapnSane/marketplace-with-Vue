@@ -3,7 +3,8 @@ node_modules
 /dist
 src/modules/auth.ts
 src/views/About.vue
-
+AppNavigation.vue.rej
+.gitignore
 
 # local env files
 .env.local
