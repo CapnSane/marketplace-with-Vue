@@ -5,21 +5,49 @@
       <span>Here is the place that you can acquire the most</span>
       <span>&nbsp; powerful Hallowed Grounds cards ever!</span>
     </p>
+    <div class="carousel">
+      <carousel :items-to-show="1.5">
+        <slide class="carousel-slide" v-for="slide in 5" :key="slide">
+          {{ slide }}
+        </slide>
+
+        <template #addons>
+          <navigation />
+          <pagination />
+        </template>
+      </carousel>
+    </div>
   </div>
 </template>
 
 <script>
+// export default {
+//   data() {
+//     return {
+//       // image: { backgroundImage: 'url(https://vuejs.org/src/assets/forest.jpg)' },
+//     };
+//   },
+// };
+import 'vue3-carousel/dist/carousel.css';
+import {
+  Carousel,
+  Slide,
+  Pagination,
+  Navigation,
+} from 'vue3-carousel';
+
 export default {
-  data() {
-    return {
-      image: { backgroundImage: 'url(https://vuejs.org/src/assets/forest.jpg)' },
-    };
+  name: 'App',
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
   },
 };
 </script>
 
 <style lang="scss" scoped>
-
 .title {
   float: left;
   font-size: 2vw;
@@ -97,7 +125,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-size: 3.6vw;
+  font-size: 3vw;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
 }
@@ -106,9 +134,21 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-size: 2.5vw;
+  font-size: 2vw;
   width: 70vw;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
+}
+
+.carousel {
+  margin: auto;
+  margin-top: 50px;
+  width: 40vw;
+  text-align: center;
+  align-items: center;
+}
+.carousel-slide {
+  height: 25vw;
+  border: 2px solid red;
 }
 </style>
