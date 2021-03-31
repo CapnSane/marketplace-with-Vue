@@ -33,4 +33,35 @@ body {
   height: 100%;
 }
 
+div.agile__actions {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  position: absolute;
+  top: 13vw;
+  right: 0;
+  left: 0;
+}
+
+html body div#app div#home.home div.agile.agile--auto-play.carousel div.agile__actions button.agile__nav-button.agile__nav-button--prev {
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(100, 0, 100, 0.3);
+}
+html body div#app div#home.home div.agile.agile--auto-play.carousel div.agile__actions button.agile__nav-button.agile__nav-button--next {
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(100, 0, 100, 0.3);
+}
+html body div#app div#home.home div.agile.agile--auto-play.carousel div.agile__actions button.agile__nav-button.agile__nav-button--prev:hover {
+  transform: scale(105%);
+  cursor: pointer;
+}
+html body div#app div#home.home div.agile.agile--auto-play.carousel div.agile__actions button.agile__nav-button.agile__nav-button--next:hover {
+  transform: scale(105%);
+  cursor: pointer;
+}
+
 </style>

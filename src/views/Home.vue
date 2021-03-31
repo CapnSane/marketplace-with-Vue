@@ -5,6 +5,7 @@
       <span>Here is the place that you can acquire the most</span>
       <span>&nbsp; powerful Hallowed Grounds cards ever!</span>
     </p>
+    tslint:disable-next-line:max-line-length
     <agile class="carousel" :autoplay="true" :infinite="true" :autoplay-speed="5000" :slidesToShow="3">
       <div>
         <img class="slide" src="@/assets/blue.jpg" alt="" />
