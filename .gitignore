@@ -3,6 +3,7 @@ node_modules
 /dist
 src/views/About.vue
 AppNavigation.vue.rej
+.prettierrc
 
 # local env files
 .env.local

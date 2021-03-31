@@ -5,44 +5,36 @@
       <span>Here is the place that you can acquire the most</span>
       <span>&nbsp; powerful Hallowed Grounds cards ever!</span>
     </p>
-    <div class="carousel">
-      <carousel :items-to-show="1.5">
-        <slide class="carousel-slide" v-for="slide in 5" :key="slide">
-          {{ slide }}
-        </slide>
+    <agile class="carousel" :autoplay="true" :infinite="true" :autoplay-speed="5000" :slidesToShow="3">
+      <div>
+        <img class="slide" src="@/assets/blue.jpg" alt="" />
+      </div>
 
-        <template #addons>
-          <navigation />
-          <pagination />
-        </template>
-      </carousel>
-    </div>
+      <div>
+        <img class="slide" src="@/assets/red.jpg" alt="" />
+      </div>
+
+      <div>
+        <img class="slide" src="@/assets/green.jpg" alt="" />
+      </div>
+
+      <div>
+        <img class="slide" src="@/assets/yellow.jpg" alt="" />
+      </div>
+
+      <div>
+        <img class="slide" src="@/assets/purple.jpg" alt="" />
+      </div>
+    </agile>
   </div>
 </template>
 
 <script>
-// export default {
-//   data() {
-//     return {
-//       // image: { backgroundImage: 'url(https://vuejs.org/src/assets/forest.jpg)' },
-//     };
-//   },
-// };
-import 'vue3-carousel/dist/carousel.css';
-import {
-  Carousel,
-  Slide,
-  Pagination,
-  Navigation,
-} from 'vue3-carousel';
+import { VueAgile } from 'vue-agile';
 
 export default {
-  name: 'App',
   components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
+    agile: VueAgile,
   },
 };
 </script>
@@ -141,14 +133,15 @@ export default {
 }
 
 .carousel {
-  margin: auto;
-  margin-top: 50px;
-  width: 40vw;
+  margin: 0 auto;
+  width: 50%;
   text-align: center;
   align-items: center;
 }
-.carousel-slide {
-  height: 25vw;
-  border: 2px solid red;
+
+.slide {
+  margin-top: 40px;
+  // object-fit: cover;
+  width: 70%;
 }
 </style>
