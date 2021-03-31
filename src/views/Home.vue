@@ -2,10 +2,9 @@
   <div id="home" class="home">
     <p class="welcome-title">Welcome to the Hallowed Grounds Marketplace!</p>
     <p class="welcome-subtitle">
-      <span>Here is the place that you can acquire the most</span>
-      <span>&nbsp; powerful Hallowed Grounds cards ever!</span>
+      Here is the place that you can acquire the most powerful Hallowed Grounds cards ever!
     </p>
-    <agile class="carousel" :autoplay="true" :infinite="true" :autoplay-speed="5000" :slidesToShow="3">
+    <agile class="carousel" :autoplay="true" :infinite="true" :autoplay-speed="5000" :slidesToShow="3" :dots="false">
       <div>
         <img class="slide" src="@/assets/blue.jpg" alt="" />
       </div>
