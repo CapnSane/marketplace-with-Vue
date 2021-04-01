@@ -152,6 +152,7 @@ html
   transform: scale(103%);
   transition-duration: 0.25s;
   transition-timing-function: linear;
+  box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.6);
 }
 
 .slide-img {
