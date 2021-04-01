@@ -1,39 +1,21 @@
 <template>
   <div id="home" class="home">
-    <p class="welcome-title">Welcome to the Hallowed Grounds Marketplace!</p>
+    <p class="welcome-title">
+      Welcome to the Hallowed Grounds Marketplace!
+    </p>
     <p class="welcome-subtitle">
       Here is the place that you can acquire the most powerful Hallowed Grounds cards ever!
     </p>
-    <agile class="carousel" :autoplay="true" :infinite="true" :autoplay-speed="5000" :slidesToShow="3" :dots="false">
-      <div>
-        <img class="slide" src="@/assets/blue.jpg" alt="" />
-      </div>
-
-      <div>
-        <img class="slide" src="@/assets/red.jpg" alt="" />
-      </div>
-
-      <div>
-        <img class="slide" src="@/assets/green.jpg" alt="" />
-      </div>
-
-      <div>
-        <img class="slide" src="@/assets/yellow.jpg" alt="" />
-      </div>
-
-      <div>
-        <img class="slide" src="@/assets/purple.jpg" alt="" />
-      </div>
-    </agile>
+    <carousel />
   </div>
 </template>
 
 <script>
-import { VueAgile } from 'vue-agile';
+import Carousel from '@/components/Carousel.vue';
 
 export default {
   components: {
-    agile: VueAgile,
+    Carousel,
   },
 };
 </script>
@@ -46,6 +28,7 @@ export default {
   color: rgb(0, 0, 0);
   text-shadow: rgb(255, 255, 255) 3px 3px 20px;
 }
+
 @media screen and (max-width: 1250px) {
   .title {
     font-size: 25px;
@@ -64,6 +47,7 @@ export default {
     z-index: -1;
     transition: 0.15s all ease-in-out;
   }
+
   input {
     border-radius: 5px;
     padding: 4px 12px;
@@ -106,6 +90,7 @@ export default {
   text-shadow: rgb(0, 0, 0) 2px 2px 4px;
   text-decoration: none;
 }
+
 .create-account-button {
   // font-size: 0.8vw;
   text-shadow: rgb(0, 0, 0) 2px 2px 4px;
@@ -113,6 +98,7 @@ export default {
 }
 
 .welcome-title {
+  margin-bottom: 10px;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -120,8 +106,9 @@ export default {
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
 }
+
 .welcome-subtitle {
-  margin: auto;
+  margin: 0 auto;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
@@ -129,18 +116,5 @@ export default {
   width: 70vw;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
-}
-
-.carousel {
-  margin: 0 auto;
-  width: 50%;
-  text-align: center;
-  align-items: center;
-}
-
-.slide {
-  margin-top: 40px;
-  // object-fit: cover;
-  width: 70%;
 }
 </style>

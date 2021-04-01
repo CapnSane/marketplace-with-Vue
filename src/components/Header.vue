@@ -1,21 +1,22 @@
 <template>
   <div id="header">
-    <span class="title">Hallowed Grounds Marketplace</span>
-    <div class="wrapper">
-      <input type="text" v-model="search" placeholder="Search cards.." />
-      <button class="search-button">Search Cards</button>
-      <router-link class="login-button" to="/login">Sign in</router-link> |
-      <router-link class="create-account-button" to="/createAccount">Sign up</router-link>
-      <router-link class="cart-button" to="/cart"><img /></router-link>
+    <div class="header-div">
+      <span class="title">Hallowed Grounds Marketplace</span>
+      <div class="wrapper">
+        <input type="text" v-model="search" placeholder="Search cards.." />
+        <button class="search-button">Search Cards</button>
+        <router-link class="login-button" to="/login">Sign in</router-link> |
+        <router-link class="create-account-button" to="/createAccount">Sign up</router-link>
+        <router-link class="cart-button" to="/cart"><img /></router-link>
+      </div>
     </div>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
 #header {
-  height: 45px;
+  height: 70px;
   background-color: rgba(171, 0, 171, 0.3);
 
   a {
@@ -28,7 +29,15 @@
   }
 }
 
+.header-div {
+  padding-top: 1.2vw;
+}
+
 .title {
+  position: absolute;
+  margin-left: 10px;
+  left: 0;
+  top: 10px;
   float: left;
   font-size: 2vw;
   font-weight: bold;
@@ -43,9 +52,13 @@
 
 .wrapper {
   position: relative;
-  padding-top: 8px;
+  height: 2.5vw;
+  float: right;
+  margin-right: 20px;
+  top: 0;
+  bottom: 0;
   label {
-    position: absolute;
+    position: relative;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
     top: 8px;
