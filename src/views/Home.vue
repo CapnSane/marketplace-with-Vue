@@ -102,7 +102,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-size: 3vw;
+  font-size: 52px;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
 }
@@ -112,7 +112,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
-  font-size: 2vw;
+  font-size: 36px;
   width: 70vw;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
