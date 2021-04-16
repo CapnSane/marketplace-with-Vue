@@ -21,7 +21,7 @@ body {
   background-image: url("../src/assets/forest.jpg");
   // width: 100%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: initial;
   background-size: 100vw 110vw;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   text-align: center;

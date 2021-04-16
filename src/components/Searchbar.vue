@@ -4,7 +4,6 @@
     <button class="search-button">{{ buttonText }}</button>
   </div>
 </template>
-
 <script>
 export default {
   data: () => ({
@@ -12,7 +11,6 @@ export default {
   }),
 };
 </script>
-
 <style lang="scss" scoped>
 .wrapper {
   position: relative;
@@ -22,7 +20,7 @@ export default {
   top: 0;
   bottom: 0;
   label {
-    // position: relative;
+    position: relative;
     font-size: 12px;
     color: rgba(0, 0, 0, 0.5);
     top: 8px;
@@ -55,7 +53,6 @@ export default {
     }
   }
 }
-
 .search-button {
   color: rgb(48, 1, 43);
   font-size: 13px;

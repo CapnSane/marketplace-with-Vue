@@ -143,6 +143,33 @@ html
   align-items: center;
 }
 
+@media screen and (max-width: 375px) {
+  .carousel {
+    width: 100%;
+    // height: 100%;
+  }
+
+  html
+    body
+    div#app
+    div#home.home
+    div.agile.agile--auto-play.carousel
+    div.agile__actions
+    button.agile__nav-button.agile__nav-button--prev {
+    display: none;
+  }
+
+  html
+    body
+    div#app
+    div#home.home
+    div.agile.agile--auto-play.carousel
+    div.agile__actions
+    button.agile__nav-button.agile__nav-button--next {
+    display: none;
+  }
+}
+
 .slide-div {
   transition-duration: 0.5s;
   margin: 40px 10px -20px 10px;

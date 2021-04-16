@@ -29,8 +29,8 @@ export default {
 
 <style lang="scss" scoped>
 #header {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
   // height: 70px;
   background-color: rgba(171, 0, 171, 0.3);
 
