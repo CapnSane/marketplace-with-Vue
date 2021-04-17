@@ -15,8 +15,8 @@ export default {
 </script>
 <style lang="scss">
 body {
-  position: relative;
-  flex-wrap: wrap;
+  // position: relative;
+  // flex-wrap: wrap;
   background-color: black;
   background-image: url("../src/assets/forest.jpg");
   // width: 100%;

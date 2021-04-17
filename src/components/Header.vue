@@ -1,14 +1,16 @@
 <template>
   <div id="header">
     <div class="header-div">
-      <span class="title">Hallowed Grounds Marketplace</span>
+      <div>
+        <router-link class="title" to="/">Hallowed Grounds Marketplace</router-link>
+      </div>
       <div class="wrapper">
         <div class="search">
-          <searchbar />
+          <search-bar />
         </div>
-        <div class="signin-signup">
+        <div class="login">
           <router-link class="login-button" to="/login">Sign in</router-link> |
-          <router-link class="create-account-button" to="/signup">Sign up</router-link>
+          <router-link class="create-account-button" to="/sign-up">Sign up</router-link>
           <router-link class="cart-button" to="/cart"><img /></router-link>
         </div>
       </div>
@@ -18,11 +20,11 @@
 </template>
 
 <script>
-import Searchbar from '@/components/Searchbar.vue';
+import searchBar from '@/components/Searchbar.vue';
 
 export default {
   components: {
-    Searchbar,
+    searchBar,
   },
 };
 </script>
@@ -44,61 +46,24 @@ export default {
   }
 }
 
-// .header-div {
-//   padding-top: 1.2vw;
-// }
-
 .title {
-  // position: relative;
-  margin-left: 10px;
-  float: left;
+  display: flex;
+  left: 10px;
+  // margin-left: 10px;
+  // float: left;
   // top: 10px;
   font-size: 32px;
   font-weight: bold;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0) !important;
   text-shadow: rgb(255, 255, 255) 3px 3px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
 }
+
 // @media screen and (max-width: 1250px) {
 //   .title {
 //     font-size: 2vw;
 //   }
-// }
-
-.search {
-  // float: right;
-}
-.signin-signup {
-  // float: right;
-}
-
-// .login-button {
-//   // font-size: 0.8vw;
-//   margin-left: 10px;
-//   text-shadow: rgb(0, 0, 0) 2px 2px 4px;
-//   text-decoration: none;
-// }
-// .create-account-button {
-//   // font-size: 0.8vw;
-//   text-shadow: rgb(0, 0, 0) 2px 2px 4px;
-//   text-decoration: none;
-// }
-
-// .welcome-title {
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   font-weight: bold;
-//   font-size: 3.6vw;
-//   color: rgb(0, 0, 0);
-//   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
-// }
-// .welcome-subtitle {
-//   margin: auto;
-//   font-family: Avenir, Helvetica, Arial, sans-serif;
-//   -webkit-font-smoothing: antialiased;
-//   font-weight: bold;
-//   font-size: 2.5vw;
-//   width: 70vw;
-//   color: rgb(0, 0, 0);
-//   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
 // }
 </style>
