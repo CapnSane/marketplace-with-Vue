@@ -105,6 +105,7 @@ export default {
   font-size: 52px;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
+  text-align: center;
 }
 
 .welcome-subtitle {
@@ -116,5 +117,6 @@ export default {
   width: 70vw;
   color: rgb(0, 0, 0);
   text-shadow: rgb(225, 250, 255) 2px 2px 6px;
+  text-align: center;
 }
 </style>

@@ -16,7 +16,7 @@ export default {
   position: relative;
   // height: 2.5vw;
   // float: right;
-  margin-right: 20px;
+  // margin-right: 20px;
   top: 0;
   bottom: 0;
   label {
@@ -33,7 +33,7 @@ export default {
     padding: 4px 12px;
     margin-right: 10px;
     height: 20px;
-    width: 30vw;
+    width: 20vw;
     color: rgba(0, 0, 0, 0.7);
     border: 1px solid rgb(75, 0, 67);
     transition: 0.15s all ease-in-out;
@@ -61,5 +61,7 @@ export default {
   border-radius: 5px;
   margin-top: -10px;
   margin-left: 5px;
+  cursor: pointer;
+  outline: none;
 }
 </style>

@@ -1,9 +1,8 @@
 <template>
-  <Header/>
+  <Header class="header"/>
   <!-- <router-view/> -->
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
 import Header from '@/components/Header.vue';
 
 export default {
@@ -15,7 +14,7 @@ export default {
 </script>
 <style lang="scss">
 body {
-  // position: relative;
+  position: relative;
   // flex-wrap: wrap;
   background-color: black;
   background-image: url("../src/assets/forest.jpg");
@@ -23,8 +22,7 @@ body {
   background-repeat: no-repeat;
   background-position: initial;
   background-size: 100vw 110vw;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  text-align: center;
+  font-family: Arial, sans-serif;
   color: rgb(255, 255, 255);
   margin: 0 0 0 0 !important;
   width: 100%;

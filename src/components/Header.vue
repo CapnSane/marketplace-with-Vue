@@ -1,7 +1,7 @@
 <template>
   <div id="header">
     <div class="header-div">
-      <div>
+      <div class="title-div">
         <router-link class="title" to="/">Hallowed Grounds Marketplace</router-link>
       </div>
       <div class="wrapper">
@@ -46,6 +46,10 @@ export default {
   }
 }
 
+.header-div {
+  margin-left: 20px;
+}
+
 .title {
   display: flex;
   left: 10px;
@@ -66,4 +70,5 @@ export default {
 //     font-size: 2vw;
 //   }
 // }
+
 </style>
