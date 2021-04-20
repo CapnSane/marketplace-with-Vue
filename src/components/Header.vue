@@ -10,7 +10,7 @@
         </div>
         <div class="login">
           <router-link class="login-button" to="/login">Sign in</router-link> |
-          <router-link class="create-account-button" to="/sign-up">Sign up</router-link>
+          <router-link class="create-account-button" to="/signup">Sign up</router-link>
           <router-link class="cart-button" to="/cart"><img /></router-link>
         </div>
       </div>

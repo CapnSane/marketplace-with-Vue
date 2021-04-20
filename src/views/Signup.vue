@@ -8,6 +8,9 @@
       type="username"
       @keyup="userNameHandler"
     />
+    <div v-if="error.type === 'USERNAME'" class="signup-error">
+      {{ error.msg }}
+    </div>
     <div>Password</div>
     <input
       class="input-bar"
@@ -16,6 +19,9 @@
       type="password"
       @keyup="passwordHandler($event, 1)"
     />
+    <div v-if="error.type === 'PASSWORD1'" class="signup-error">
+      {{ error.msg }}
+    </div>
     <div>Confirm Password</div>
     <input
       class="input-bar"
@@ -24,6 +30,9 @@
       type="password"
       @keyup="passwordHandler($event, 2)"
     />
+    <div v-if="error.type === 'PASSWORD2'" class="signup-error">
+      {{ error.msg }}
+    </div>
     <div>
       <button class="button-signup" @click="signup">Sign Up!</button>
     </div>
@@ -43,10 +52,28 @@ export default {
       username: '',
       password1: '',
       password2: '',
+      error: { type: '', msg: '' },
     });
 
     const signup = () => {
-      console.log('fazendo signup');
+      state.error.type = '';
+      state.error.msg = '';
+      if (!state.username) {
+        state.error.type = 'USERNAME';
+        state.error.msg = 'Please enter your username';
+        return;
+      }
+
+      if (!state.password1) {
+        state.error.type = 'PASSWORD1';
+        state.error.msg = 'Please enter your password';
+        return;
+      }
+
+      if (state.password1 !== state.password2) {
+        state.error.type = 'PASSWORD2';
+        state.error.msg = 'Password mismatch';
+      }
     };
 
     const userNameHandler = (e: KeyboardEvent) => {
@@ -96,6 +123,13 @@ export default {
   width: 200px;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   margin-bottom: 15px;
+}
+
+.signup-error {
+  color: red;
+  font-weight: normal;
+  margin-bottom: 15px;
+  text-shadow: none;
 }
 
 .button-signup {
