@@ -57,12 +57,13 @@ export default {
     };
 
     const passwordHandler = (e: KeyboardEvent, x: number) => {
-      if (e.key === 'Enter' && state.username) {
-        if (x === 1 && state.password1) {
-          password2El.value.focus();
-        } else if (x === 2 && state.password1 && state.password2) {
-          signup();
-        }
+      if (e.key !== 'Enter' || !state.username) {
+        return;
+      }
+      if (x === 1 && state.password1) {
+        password2El.value.focus();
+      } else if (x === 2 && state.password1 && state.password2) {
+        signup();
       }
     };
 
