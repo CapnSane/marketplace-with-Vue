@@ -71,7 +71,12 @@ export default defineComponent({
           state.error.type = 'PASSWORD';
           state.error.msg = 'Username or password wrong';
           console.log(res.status);
+        } else if (res.status === 'WRONG_PASSWORD') {
+          state.error.type = 'PASSWORD';
+          state.error.msg = 'Username or password wrong';
+          console.log(res.status);
         } else {
+          console.log('Connected');
           console.log(res.status);
         }
       }

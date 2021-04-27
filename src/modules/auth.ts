@@ -2,7 +2,7 @@ import { ElLoadingComponent } from 'element-ui/types/loading';
 import { reactive, readonly } from 'vue';
 import { Login, Signup } from '@/mockServer/server';
 
-const STORAGE_KEY = 'Marketplace_vue_3_1';
+const STORAGE_KEY = 'Marketplace_vue';
 
 interface State {
   id: number;
@@ -28,18 +28,18 @@ const mutations = {
 };
 
 const actions = {
-  // loadUserData() {
-  //   const item = window.localStorage.getItem(STORAGE_KEY);
+  loadUserData() {
+    const item = window.localStorage.getItem(STORAGE_KEY);
 
-  //   if (item) {
-  //     mutations.login(JSON.parse(item));
-  //   }
-  // },
+    if (item) {
+      mutations.login(JSON.parse(item));
+    }
+  },
 
-  // logout() {
-  //   window.localStorage.removeItem(STORAGE_KEY);
-  //   mutations.login({});
-  // },
+  logout() {
+    window.localStorage.removeItem(STORAGE_KEY);
+    mutations.login({});
+  },
 
   async login(username: string, password: string) {
     console.log('sou action, vamos logar.\n Username: ', username, '\npassword: ', password);
@@ -48,7 +48,7 @@ const actions = {
 
     if (res.status === 'ok') {
       mutations.login(res.result);
-      // window.localStorage.setItem(STORAGE_KEY, JSON.stringify(res.result));
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(res.result));
     }
 
     return res;
@@ -61,7 +61,7 @@ const actions = {
 
     if (res.status === 'ok') {
       mutations.login(res.result);
-      // window.localStorage.setItem(STORAGE_KEY, JSON.stringify(res.result));
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(res.result));
     }
 
     return res;

@@ -10,11 +10,12 @@
         </div>
         <div v-if="!isLoggedIn" class="login">
           <router-link class="login-button" to="/login">Sign in</router-link> |
-          <router-link class="create-account-button" to="/signup">Sign up</router-link>
+          <router-link class="signup-button" to="/signup">Sign up</router-link>
         </div>
         <div v-else-if="isLoggedIn">
           <span>Welcome,&#x20</span
           ><router-link class="account-button" to="/account"> {{ customer }} </router-link><span>!</span>
+          <span class="logout-button" @click="logoutHandler">Logout</span>
         </div>
         <!-- <div>
           <router-link class="cart-button" to="/cart"><img /></router-link>
@@ -38,10 +39,12 @@ export default {
     const auth = useAuth();
     const customer = computed(() => auth.state.name);
     const isLoggedIn = computed(() => auth.state.token);
-    console.log(auth);
+    const logoutHandler = () => {
+      auth.actions.logout();
+    };
 
     return {
-      isLoggedIn, customer
+      isLoggedIn, customer, logoutHandler
     };
   }
 };
@@ -73,6 +76,27 @@ export default {
   text-shadow:1px 1px 2px rgba(0, 0, 0, 0.9) !important;
   outline: none;
   text-decoration: none;
+}
+
+.login-button {
+  text-decoration: none;
+  color: white !important;
+}
+.signup-button {
+  text-decoration: none;
+  color: white !important;
+}
+
+.logout-button {
+  outline: none;
+  text-decoration: none;
+  text-shadow:1px 1px 2px rgba(255, 255, 255, 0.3) !important;
+  color: blue !important;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .title {

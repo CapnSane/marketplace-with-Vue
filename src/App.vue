@@ -14,6 +14,8 @@ export default {
   setup() {
     const auth = useAuth();
 
+    auth.actions.loadUserData();
+
     if (auth.state.token) {
       console.log('Está logado');
     } else {
@@ -30,10 +32,8 @@ body {
   // flex-wrap: wrap;
   background-color: black;
   background-image: url('../src/assets/forest.jpg');
-  // width: 100%;
   background-repeat: no-repeat;
   background-position: initial;
-  background-size: 100vw 110vw;
   font-family: Arial, sans-serif;
   color: rgb(255, 255, 255);
   margin: 0 0 0 0 !important;

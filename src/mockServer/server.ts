@@ -1,8 +1,8 @@
 const user = {
   id: 1,
   name: 'Jorge',
-  username: 'asd',
-  password: '123',
+  username: 'Jorgito',
+  password: '123123',
   token: 'megaToken',
   balance: 0,
   cards: [],
@@ -55,7 +55,7 @@ export const Login = async (username: string, password: string) => {
       id: user.id,
       name: user.name,
       username: user.username,
-      token: 'tokenMisterioso'
+      token: user.token
     }
   };
 };
