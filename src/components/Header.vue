@@ -8,11 +8,17 @@
         <div class="search">
           <search-bar />
         </div>
-        <div class="login">
+        <div v-if="!isLoggedIn" class="login">
           <router-link class="login-button" to="/login">Sign in</router-link> |
           <router-link class="create-account-button" to="/signup">Sign up</router-link>
-          <router-link class="cart-button" to="/cart"><img /></router-link>
         </div>
+        <div v-else-if="isLoggedIn">
+          <span>Welcome,&#x20</span
+          ><router-link class="account-button" to="/account"> {{ customer }} </router-link><span>!</span>
+        </div>
+        <!-- <div>
+          <router-link class="cart-button" to="/cart"><img /></router-link>
+        </div> -->
       </div>
     </div>
   </div>
@@ -21,11 +27,23 @@
 
 <script>
 import searchBar from '@/components/Searchbar.vue';
+import useAuth from '@/modules/auth';
+import { computed } from 'vue';
 
 export default {
   components: {
-    searchBar,
+    searchBar
   },
+  setup() {
+    const auth = useAuth();
+    const customer = computed(() => auth.state.name);
+    const isLoggedIn = computed(() => auth.state.token);
+    console.log(auth);
+
+    return {
+      isLoggedIn, customer
+    };
+  }
 };
 </script>
 
@@ -50,6 +68,13 @@ export default {
   margin-left: 20px;
 }
 
+.account-button {
+  color: rgb(0, 255, 0) !important;
+  text-shadow:1px 1px 2px rgba(0, 0, 0, 0.9) !important;
+  outline: none;
+  text-decoration: none;
+}
+
 .title {
   display: flex;
   left: 10px;
@@ -70,5 +95,4 @@ export default {
 //     font-size: 2vw;
 //   }
 // }
-
 </style>

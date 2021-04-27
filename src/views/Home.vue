@@ -15,8 +15,8 @@ import Carousel from '@/components/Carousel.vue';
 
 export default {
   components: {
-    Carousel,
-  },
+    Carousel
+  }
 };
 </script>
 
@@ -99,7 +99,7 @@ export default {
 
 .welcome-title {
   margin-bottom: 10px;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   font-size: 52px;
@@ -110,7 +110,7 @@ export default {
 
 .welcome-subtitle {
   margin: 0 auto;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: bold;
   font-size: 36px;

@@ -1,23 +1,35 @@
 <template>
-  <Header class="header"/>
+  <Header class="header" />
   <!-- <router-view/> -->
 </template>
 <script lang="ts">
 import Header from '@/components/Header.vue';
+import useAuth from './modules/auth';
 
 export default {
   components: {
-    Header,
+    Header
   },
-};
 
+  setup() {
+    const auth = useAuth();
+
+    if (auth.state.token) {
+      console.log('Está logado');
+    } else {
+      console.log('Não está logado');
+    }
+
+    return {};
+  }
+};
 </script>
 <style lang="scss">
 body {
   position: relative;
   // flex-wrap: wrap;
   background-color: black;
-  background-image: url("../src/assets/forest.jpg");
+  background-image: url('../src/assets/forest.jpg');
   // width: 100%;
   background-repeat: no-repeat;
   background-position: initial;
@@ -28,5 +40,4 @@ body {
   width: 100%;
   height: 100%;
 }
-
 </style>

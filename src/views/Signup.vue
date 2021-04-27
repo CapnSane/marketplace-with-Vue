@@ -1,5 +1,16 @@
 <template>
   <div class="signup">
+    <div>Name</div>
+    <input
+      class="input-bar"
+      v-model="name"
+      ref="nameEl"
+      type="name"
+      @keyup="nameHandler"
+    />
+    <div v-if="error.type === 'NAME'" class="signup-error">
+      {{ error.msg }}
+    </div>
     <div>Username</div>
     <input
       class="input-bar"
@@ -14,7 +25,7 @@
     <div>Password</div>
     <input
       class="input-bar"
-      v-model="password1"
+      v-model="password.password1"
       ref="password1El"
       type="password"
       @keyup="passwordHandler($event, 1)"
@@ -25,7 +36,7 @@
     <div>Confirm Password</div>
     <input
       class="input-bar"
-      v-model="password2"
+      v-model="password.password2"
       ref="password2El"
       type="password"
       @keyup="passwordHandler($event, 2)"
@@ -41,44 +52,74 @@
 
 <script lang="ts">
 import { toRefs, reactive, ref } from 'vue';
+import useAuth from '@/modules/auth';
 
 export default {
   components: {},
   setup() {
+    const auth = useAuth();
+    const nameEl= ref();
     const usernameEl = ref();
     const password1El = ref();
     const password2El = ref();
     const state = reactive({
+      name: '',
       username: '',
-      password1: '',
-      password2: '',
-      error: { type: '', msg: '' },
+      password: {
+        password1: '',
+        password2: ''
+      },
+      error: {
+        type: '',
+        msg: ''
+      }
     });
 
-    const signup = () => {
+    const signup = async () => {
       state.error.type = '';
       state.error.msg = '';
+      if (!state.name) {
+        state.error.type = 'NAME';
+        state.error.msg = 'Please enter your name';
+        return;
+      }
+
       if (!state.username) {
         state.error.type = 'USERNAME';
         state.error.msg = 'Please enter your username';
         return;
       }
 
-      if (!state.password1) {
+      if (!state.password.password1) {
         state.error.type = 'PASSWORD1';
         state.error.msg = 'Please enter your password';
         return;
       }
 
-      if (state.password1 !== state.password2) {
+      if (state.password.password1 !== state.password.password2) {
         state.error.type = 'PASSWORD2';
         state.error.msg = 'Password mismatch';
+      }
+
+      console.log('fazendo cadastro -> ', state.username, state.password.password1);
+      const res = await auth.actions.signup(state.name, state.username, state.password.password1);
+      if (res.status === 'ok') {
+        console.log('cadastro ok');
+      } else {
+        console.log('USERNAME OR PASSWORD WRONG!!!!!');
+      }
+    };
+
+    const nameHandler = (e: KeyboardEvent) => {
+      if (e.key === 'Enter' && state.name) {
+        console.log('colocou o nome');
+        usernameEl.value.focus();
       }
     };
 
     const userNameHandler = (e: KeyboardEvent) => {
       if (e.key === 'Enter' && state.username) {
-        console.log('deu');
+        console.log('colocou o username');
         password1El.value.focus();
       }
     };
@@ -87,9 +128,11 @@ export default {
       if (e.key !== 'Enter' || !state.username) {
         return;
       }
-      if (x === 1 && state.password1) {
+      if (x === 1 && state.password.password1) {
+        console.log('colocou o password1');
         password2El.value.focus();
-      } else if (x === 2 && state.password1 && state.password2) {
+      } else if (x === 2 && state.password.password1 && state.password.password2) {
+        console.log('colocou o password2');
         signup();
       }
     };
@@ -97,11 +140,13 @@ export default {
     return {
       ...toRefs(state),
       signup,
+      nameHandler,
       userNameHandler,
       passwordHandler,
+      nameEl,
       usernameEl,
       password1El,
-      password2El,
+      password2El
     };
   },
 };
@@ -143,4 +188,9 @@ export default {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   margin-top: -5px;
 }
+.button-signup:hover {
+  transform: scale(1.02);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
 </style>
