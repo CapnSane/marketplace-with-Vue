@@ -58,7 +58,7 @@ export default {
   components: {},
   setup() {
     const auth = useAuth();
-    const nameEl= ref();
+    const nameEl = ref();
     const usernameEl = ref();
     const password1El = ref();
     const password2El = ref();
@@ -148,7 +148,7 @@ export default {
       password1El,
       password2El
     };
-  },
+  }
 };
 </script>
 

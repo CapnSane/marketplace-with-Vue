@@ -38,7 +38,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs, reactive, ref } from 'vue';
+import {
+  defineComponent, toRefs, reactive, ref
+} from 'vue';
 
 import useAuth from '@/modules/auth';
 import { Login } from '@/mockServer/server';
@@ -54,7 +56,8 @@ export default defineComponent({
       password: '',
       error: {
         type: '',
-        msg: '' },
+        msg: ''
+      },
       passwordFieldType: 'password'
     });
 

@@ -6,7 +6,7 @@ const user = {
   token: 'megaToken',
   balance: 0,
   cards: [],
-  status: 'ok',
+  status: 'ok'
 };
 
 // const data = window.localStorage.getItem('tmp_marketplace_vue31');
@@ -27,7 +27,7 @@ export const Signup = async (name: string, username: string, password: string) =
   user.token = 'token_tunado';
   user.balance = Math.floor(Math.random() * 1000);
 
-//   window.localStorage.setItem('tmp_marketplace_vue31', JSON.stringify(user));
+  //   window.localStorage.setItem('tmp_marketplace_vue31', JSON.stringify(user));
 
   return {
     status: 'ok',
@@ -35,18 +35,18 @@ export const Signup = async (name: string, username: string, password: string) =
       id: user.id,
       name: user.name,
       username: user.username,
-      token: user.token,
-    },
+      token: user.token
+    }
   };
 };
 
 export const Login = async (username: string, password: string) => {
   if (username !== user.username) {
-    return { status: 'WRONG_USER' }
+    return { status: 'WRONG_USER' };
   }
 
   if (password !== user.password) {
-    return { status: 'WRONG_PASSWORD' }
+    return { status: 'WRONG_PASSWORD' };
   }
 
   return {
@@ -55,7 +55,7 @@ export const Login = async (username: string, password: string) => {
       id: user.id,
       name: user.name,
       username: user.username,
-      token: 'tokenMisterioso',
-    },
+      token: 'tokenMisterioso'
+    }
   };
 };
