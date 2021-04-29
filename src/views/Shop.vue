@@ -1,18 +1,14 @@
 <template>
   <div id="home" class="home">
-    <p class="welcome-title">
-      Welcome to the Hallowed Grounds Marketplace!
-    </p>
-    <p class="welcome-subtitle">
-      Here is the place that you can acquire the most powerful Hallowed Grounds cards ever!
-    </p>
+    <div>{{ list }}</div>
     <carousel />
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import Carousel from '@/components/Carousel.vue';
 import useCards from '@/modules/cards';
+import { computed } from 'vue';
 
 export default {
   components: {
@@ -20,7 +16,12 @@ export default {
   },
   setup() {
     const cards = useCards();
+    const list = computed(() => cards.state.list);
     cards.actions.loadCards();
+
+    return {
+      list
+    };
   }
 };
 </script>

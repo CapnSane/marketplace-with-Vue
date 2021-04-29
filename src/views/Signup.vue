@@ -105,6 +105,7 @@ export default {
       const res = await auth.actions.signup(state.name, state.username, state.password.password1);
       if (res.status === 'ok') {
         console.log('cadastro ok');
+        window.location.assign('/');
       } else {
         console.log('USERNAME OR PASSWORD WRONG!!!!!');
       }

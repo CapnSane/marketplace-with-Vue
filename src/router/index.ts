@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import Signup from '../views/Signup.vue';
+import Shop from '../views/Shop.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -19,6 +20,14 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Signup',
     component: Signup,
   },
+  {
+    path: '/shop',
+    name: 'Shop',
+    component: Shop,
+    meta: {
+      requiresAuth: true
+    }
+  },
 
   // {
   //   path: '/about',
@@ -33,6 +42,7 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
+  
 });
 
 export default router;

@@ -42,7 +42,11 @@ export default {
     const logoutHandler = () => {
       auth.actions.logout();
     };
-
+    if (auth.state.token) {
+      console.log('Logged in');
+    } else {
+      console.log('Not logged');
+    }
     return {
       isLoggedIn, customer, logoutHandler
     };

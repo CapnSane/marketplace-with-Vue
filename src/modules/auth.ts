@@ -42,7 +42,7 @@ const actions = {
   },
 
   async login(username: string, password: string) {
-    console.log('sou action, vamos logar.\n Username: ', username, '\npassword: ', password);
+    console.log('Logging in...');
 
     const res: any = await Login(username, password);
 

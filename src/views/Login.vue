@@ -78,6 +78,7 @@ export default defineComponent({
         } else {
           console.log('Connected');
           console.log(res.status);
+          window.location.assign('/');
         }
       }
       if (!state.username) {
