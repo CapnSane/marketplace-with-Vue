@@ -28,16 +28,31 @@ export default {
 </script>
 <style lang="scss">
 body {
-  position: relative;
+  // position: relative;
   // flex-wrap: wrap;
   background-color: black;
   background-image: url('../src/assets/forest.jpg');
-  background-repeat: no-repeat;
+  // background-repeat: no-repeat;
   background-position: initial;
   font-family: Arial, sans-serif;
   color: rgb(255, 255, 255);
   margin: 0 0 0 0 !important;
   width: 100%;
   height: 100%;
+}
+
+.center {
+  position: relative;
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.flex {
+  display: flex !important;
+}
+
+.flex-wrap {
+  flex-wrap: wrap !important;
 }
 </style>

@@ -1,16 +1,18 @@
 <template>
-  <div id="home" class="home">
-    <div v-for="cartinhas in list" :key="cartinhas.id" class="cards">
-      <img class="cards" :src="require(`@/assets/${cartinhas.img}`)" :alt="cartinhas.name"/> {{ cartinhas.id }} - {{ cartinhas.name }} {{ cartinhas.img }}
+  <div id="home" class="home overflow-cards flex flex-wrap center">
+    <div class="div-cards" v-for="cartinhas in list" :key="cartinhas.id">
+      <img class="cards" :src="require(`@/assets/${cartinhas.img}`)" :alt="cartinhas.name" />
     </div>
+  </div>
+  <div id="home" class="home">
     <carousel />
   </div>
 </template>
 
 <script lang="ts">
-import Carousel from '@/components/Carousel.vue';
 import useCards from '@/modules/cards';
 import { computed } from 'vue';
+import Carousel from '@/components/Carousel.vue';
 
 export default {
   components: {
@@ -43,49 +45,64 @@ export default {
   }
 }
 
-.wrapper {
-  position: relative;
-  margin-top: 8px;
-  label {
-    position: absolute;
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.5);
-    top: 8px;
-    left: 12px;
-    z-index: -1;
-    transition: 0.15s all ease-in-out;
-  }
+// .wrapper {
+//   position: relative;
+//   margin-top: 8px;
+//   label {
+//     position: absolute;
+//     font-size: 12px;
+//     color: rgba(0, 0, 0, 0.5);
+//     top: 8px;
+//     left: 12px;
+//     z-index: -1;
+//     transition: 0.15s all ease-in-out;
+//   }
 
-  input {
-    border-radius: 5px;
-    padding: 4px 12px;
-    margin-right: 10px;
-    height: 20px;
-    width: 30vw;
-    color: rgba(0, 0, 0, 0.7);
-    border: 1px solid rgb(75, 0, 67);
-    transition: 0.15s all ease-in-out;
-    background: rgba(255, 255, 255, 0.9);
-    &:focus {
-      outline: none;
-      transform: scale(1.05);
-      & + label {
-        font-size: 10px;
-        transform: translateY(-24px) translateX(-12px);
-      }
-    }
-    &::-webkit-input-placeholder {
-      font-size: 12px;
-      color: rgba(0, 0, 0, 0.5);
-      font-weight: 100;
-    }
-  }
+//   input {
+//     border-radius: 5px;
+//     padding: 4px 12px;
+//     margin-right: 10px;
+//     height: 20px;
+//     width: 30vw;
+//     color: rgba(0, 0, 0, 0.7);
+//     border: 1px solid rgb(75, 0, 67);
+//     transition: 0.15s all ease-in-out;
+//     background: rgba(255, 255, 255, 0.9);
+//     &:focus {
+//       outline: none;
+//       transform: scale(1.05);
+//       & + label {
+//         font-size: 10px;
+//         transform: translateY(-24px) translateX(-12px);
+//       }
+//     }
+//     &::-webkit-input-placeholder {
+//       font-size: 12px;
+//       color: rgba(0, 0, 0, 0.5);
+//       font-weight: 100;
+//     }
+//   }
+// }
+
+.div-cards {
+  margin:9px;
 }
 
+.overflow-cards {
+  max-height: 23vw;
+  overflow-y: auto;
+}
 .cards {
-  width: 15vw;
+  width: 13.05vw;
   height: auto;
-  border-radius: 23px;
+  border-radius: 18px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+.cards:hover {
+  transform: scale(103%);
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 }
 
 .search-button {

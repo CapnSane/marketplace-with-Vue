@@ -11,10 +11,12 @@
     >
       <div>
         <div class="slide-div">
-          <img class="slide-img" src="@/assets/orange.jpg" alt="All cards" />
-          <div class="slide-title">
-            All cards
-          </div>
+          <router-link to="/shop">
+            <img class="slide-img" src="@/assets/orange.jpg" alt="All cards" />
+            <div class="slide-title">
+              All cards
+            </div>
+          </router-link>
         </div>
       </div>
 
@@ -69,8 +71,8 @@ import { VueAgile } from 'vue-agile';
 
 export default {
   components: {
-    agile: VueAgile,
-  },
+    agile: VueAgile
+  }
 };
 </script>
 
