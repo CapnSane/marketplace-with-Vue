@@ -51,7 +51,7 @@ const actions = {
         price: 2.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/castledread.jpg')"
+        img: "1.png"
       },
       {
         id: 11,
@@ -69,7 +69,7 @@ const actions = {
         price: 3.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/dreadspot1.jpg')"
+        img: "11.png"
       },
       {
         id: 12,
@@ -87,7 +87,7 @@ const actions = {
         price: 4.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/dreadspot2.jpg')"
+        img: "12.png"
       },
       {
         id: 13,
@@ -105,7 +105,7 @@ const actions = {
         price: 2.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/warlockdread1.jpg')"
+        img: "13.png"
       },
       {
         id: 14,
@@ -123,7 +123,7 @@ const actions = {
         price: 3.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/warlockdread2.jpg')"
+        img: "14.png"
       },
       {
         id: 15,
@@ -141,7 +141,7 @@ const actions = {
         price: 3.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/witcherdread1.jpg')"
+        img: "15.png"
       },
       {
         id: 16,
@@ -159,7 +159,7 @@ const actions = {
         price: 5.99,
         colorName: 'purple',
         color: 'purple',
-        img: "url('assets/witcherdread2.jpg')"
+        img: "16.png"
       },
       // Holy ground cards
       {
@@ -178,7 +178,7 @@ const actions = {
         price: 2.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/castleholy.jpg')"
+        img: "2.png"
       },
       {
         id: 21,
@@ -196,7 +196,7 @@ const actions = {
         price: 3.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/holyground1.jpg')"
+        img: "21.png"
       },
       {
         id: 22,
@@ -214,7 +214,7 @@ const actions = {
         price: 4.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/holyground2.jpg')"
+        img: "22.png"
       },
       {
         id: 23,
@@ -232,7 +232,7 @@ const actions = {
         price: 2.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/warriorholy1.jpg')"
+        img: "23.png"
       },
       {
         id: 24,
@@ -250,7 +250,7 @@ const actions = {
         price: 3.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/warriorholy2.jpg')"
+        img: "24.png"
       },
       {
         id: 25,
@@ -268,7 +268,7 @@ const actions = {
         price: 3.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/hunterholy1.jpg')"
+        img: "25.png"
       },
       {
         id: 26,
@@ -286,7 +286,7 @@ const actions = {
         price: 5.99,
         colorName: 'green',
         color: 'darkgreen',
-        img: "url('assets/hunterholy2.jpg')"
+        img: "26.png"
       },
       // Bloody gorge cards
       {
@@ -305,7 +305,7 @@ const actions = {
         price: 2.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/castlebloody.jpg')"
+        img: "3.png"
       },
       {
         id: 31,
@@ -323,7 +323,7 @@ const actions = {
         price: 3.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/bloodygorge1.jpg')"
+        img: "31.png"
       },
       {
         id: 32,
@@ -341,7 +341,7 @@ const actions = {
         price: 4.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/bloodygorge2.jpg')"
+        img: "32.png"
       },
       {
         id: 33,
@@ -359,7 +359,7 @@ const actions = {
         price: 2.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/berserkerbloody1.jpg')"
+        img: "33.png"
       },
       {
         id: 34,
@@ -377,7 +377,7 @@ const actions = {
         price: 3.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/berserkerbloody2.jpg')"
+        img: "34.png"
       },
       {
         id: 35,
@@ -395,7 +395,7 @@ const actions = {
         price: 3.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/roguebloody1.jpg')"
+        img: "35.png"
       },
       {
         id: 36,
@@ -413,16 +413,15 @@ const actions = {
         price: 5.99,
         colorName: 'red',
         color: 'darkred',
-        img: "url('assets/roguebloody2.jpg')"
+        img: "36.png"
       }
     ];
 
     setTimeout(() => {
       // API CALLS GOES HERE
 
-      console.log('after 1 sec');
+      // console.log('after 1 sec');
       mockData.forEach(card => {
-        console.log(card);
         mutations.processCard(card);
       });
 
@@ -440,7 +439,7 @@ const mutations = {
   processCard(card: any) {
     // verifying if it exists
     const idx = state.list.findIndex(x => x.id === card.id);
-    console.log("card ", card.id, card);
+    // console.log("card ", card.id, card);
 
     const newCard: card = {
       id: card.id,

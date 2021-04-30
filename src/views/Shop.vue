@@ -1,6 +1,8 @@
 <template>
   <div id="home" class="home">
-    <div>{{ list }}</div>
+    <div v-for="cartinhas in list" :key="cartinhas.id" class="cards">
+      <img class="cards" :src="require(`@/assets/${cartinhas.img}`)" :alt="cartinhas.name"/> {{ cartinhas.id }} - {{ cartinhas.name }} {{ cartinhas.img }}
+    </div>
     <carousel />
   </div>
 </template>
@@ -78,6 +80,12 @@ export default {
       font-weight: 100;
     }
   }
+}
+
+.cards {
+  width: 15vw;
+  height: auto;
+  border-radius: 23px;
 }
 
 .search-button {

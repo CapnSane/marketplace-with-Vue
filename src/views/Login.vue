@@ -78,7 +78,7 @@ export default defineComponent({
         } else {
           console.log('Connected');
           console.log(res.status);
-          window.location.assign('/');
+          window.location.assign('/shop');
         }
       }
       if (!state.username) {
