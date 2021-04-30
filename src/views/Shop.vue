@@ -2,6 +2,7 @@
   <div id="home" class="home overflow-cards flex flex-wrap center">
     <div class="div-cards" v-for="cartinhas in list" :key="cartinhas.id">
       <img class="cards" :src="require(`@/assets/${cartinhas.img}`)" :alt="cartinhas.name" />
+      <p class="price">US${{ cartinhas.price }} <button class="buy-button">BUY!</button></p>
     </div>
   </div>
   <div id="home" class="home">
@@ -85,17 +86,37 @@ export default {
 // }
 
 .div-cards {
-  margin:9px;
+  margin: 9px;
+}
+
+.buy-button {
+  height: 30px;
+  width: 50px;
+  border-radius: 5px;
+  vertical-align: middle;
+  box-shadow: 2px 2px 3px black;
+  font-weight: bold;
+  outline: none;
+  background-color: yellow;
+  border: 1px solid black;
+}
+
+.buy-button:hover {
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+  transform: scale3d(1.1, 1.1, 1.1);
 }
 
 .overflow-cards {
-  max-height: 23vw;
+  max-height: 26vw;
   overflow-y: auto;
+  margin-top: 20px;
 }
 .cards {
   width: 13.05vw;
   height: auto;
-  border-radius: 18px;
+  transition-duration: 0.9s;
+  border-radius: 13px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 .cards:hover {
@@ -103,6 +124,14 @@ export default {
   transition-duration: 0.3s;
   box-shadow: 2px 2px px rgba(0, 0, 0, 0.8);
   cursor: pointer;
+}
+
+.price {
+  font-size: 28px;
+  text-shadow: 3px 3px 3px black;
+  font-weight: bold;
+  margin-top: 10px;
+  color: yellow;
 }
 
 .search-button {

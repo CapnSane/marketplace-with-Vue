@@ -125,6 +125,7 @@ html
   transform: scale(102%);
   cursor: pointer;
   background-color: rgba(60, 0, 60, 0.5);
+  box-shadow: 3px 3px 10px black;
 }
 html
   body
@@ -136,6 +137,7 @@ html
   transform: scale(102%);
   cursor: pointer;
   background-color: rgba(60, 0, 60, 0.5);
+  box-shadow: 3px 3px 3px black;
 }
 
 .carousel {
@@ -174,20 +176,18 @@ html
 
 .slide-div {
   transition-duration: 0.5s;
-  margin: 40px 10px -20px 10px;
+  margin: 40px 12px -20px 10px;
 }
 
 .slide-div:hover {
   transform: scale(103%);
   transition-duration: 0.25s;
   transition-timing-function: linear;
-  box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.6);
 }
 
 .slide-img {
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
   cursor: pointer;
-  // margin-top: 40px;
-  // object-fit: cover;
   width: 100%;
   height: 100%;
   object-fit: cover;
