@@ -49,6 +49,8 @@ The sprints shall occur when each task needed to be completed. These sprints app
 - ~~Coding the website style~~
 - Coding the links
 - ~~Coding the account screen~~
-- Coding the cards style
+- ~~Coding the cards style~~
 - ~~Coding the authentication fields~~
 - ~~Creating the mock files for testing~~
+- Creating the shopping cart
+- Implementing the search bar
