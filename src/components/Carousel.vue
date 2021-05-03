@@ -11,7 +11,7 @@
     >
       <div>
         <div class="slide-div">
-          <router-link to="/shop">
+          <router-link class="no-decoration" to="/shop">
             <img class="slide-img" src="@/assets/orange.jpg" alt="All cards" />
             <div class="slide-title">
               All cards
@@ -22,42 +22,52 @@
 
       <div>
         <div class="slide-div">
-          <img class="slide-img" src="@/assets/red.jpg" alt="Bloody Gorge" />
-          <div class="slide-title">
-            Bloody Gorge
-          </div>
+          <router-link class="no-decoration" to="/shop/#">
+            <img class="slide-img" src="@/assets/red.jpg" alt="Bloody Gorge" />
+            <div class="slide-title">
+              Bloody Gorge
+            </div>
+          </router-link>
         </div>
       </div>
       <div>
         <div class="slide-div">
-          <img class="slide-img" src="@/assets/purple.jpg" alt="Dread Spot" />
-          <div class="slide-title">
-            Dread Spot
-          </div>
+          <router-link class="no-decoration" to="/shop/#">
+            <img class="slide-img" src="@/assets/purple.jpg" alt="Dread Spot" />
+            <div class="slide-title">
+              Dread Spot
+            </div>
+          </router-link>
         </div>
       </div>
       <div>
         <div class="slide-div">
-          <img class="slide-img" src="@/assets/blue.jpg" alt="Holy Ground" />
-          <div class="slide-title">
-            Holy Ground
-          </div>
+          <router-link class="no-decoration" to="/shop/#">
+            <img class="slide-img" src="@/assets/blue.jpg" alt="Holy Ground" />
+            <div class="slide-title">
+              Holy Ground
+            </div>
+          </router-link>
         </div>
       </div>
       <div>
         <div class="slide-div">
-          <img class="slide-img" src="@/assets/green.jpg" alt="Extra grounds" />
-          <div class="slide-title">
-            Extra grounds
-          </div>
+          <router-link class="no-decoration" to="/shop/#">
+            <img class="slide-img" src="@/assets/green.jpg" alt="Extra grounds" />
+            <div class="slide-title">
+              Extra grounds
+            </div>
+          </router-link>
         </div>
       </div>
       <div>
         <div class="slide-div">
-          <img class="slide-img" src="@/assets/yellow.jpg" alt="Extra braves" />
-          <div class="slide-title">
-            Extra braves
-          </div>
+          <router-link class="no-decoration" to="/shop/#">
+            <img class="slide-img" src="@/assets/yellow.jpg" alt="Extra braves" />
+            <div class="slide-title">
+              Extra braves
+            </div>
+          </router-link>
         </div>
       </div>
     </agile>
@@ -177,6 +187,7 @@ html
 .slide-div {
   transition-duration: 0.5s;
   margin: 40px 12px -20px 10px;
+  text-decoration: none;
 }
 
 .slide-div:hover {
@@ -202,5 +213,9 @@ html
   top: -20vw;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.no-decoration {
+  text-decoration: none !important;
 }
 </style>

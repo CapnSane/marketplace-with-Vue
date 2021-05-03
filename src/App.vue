@@ -42,7 +42,6 @@ body {
 }
 
 .center {
-  position: relative;
   text-align: center;
   margin: 0 auto;
   align-items: center;

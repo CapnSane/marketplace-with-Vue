@@ -9,13 +9,23 @@ interface State {
   name: string;
   username: string;
   token: string;
+  balance: number;
+  birthday: string;
+  country: string;
+  city: string;
+  address: string;
 }
 
 const state: State = reactive({
   id: 0,
   name: '',
   username: '',
-  token: ''
+  token: '',
+  balance: 0,
+  birthday: '',
+  country: '',
+  city: '',
+  address: '',
 });
 
 const mutations = {
@@ -24,6 +34,11 @@ const mutations = {
     state.name = obj.name;
     state.username = obj.username;
     state.token = obj.token;
+    state.balance = obj.balance;
+    state.birthday = obj.birthday;
+    state.country = obj.country;
+    state.city = obj.city;
+    state.address = obj.address;
   }
 };
 

@@ -13,6 +13,7 @@
 <script>
 import Carousel from '@/components/Carousel.vue';
 import useCards from '@/modules/cards';
+// import useMe from '@/modules/me';
 
 export default {
   components: {
@@ -20,7 +21,25 @@ export default {
   },
   setup() {
     const cards = useCards();
+    // const me = useMe();
+
+    // const list = cards.getters.sortedList();
+
+    // const loadMoreHandler = () => {
+    //   cards.actions.loadMore();
+    // };
+
+    // const buyHandler = (id: number) => {
+    //   me.mutations.addCardToCart(card);
+    // };
+
     cards.actions.loadCards();
+
+    return {
+      // list,
+      // loadMoreHandler,
+      // buyHandler
+    };
   }
 };
 </script>

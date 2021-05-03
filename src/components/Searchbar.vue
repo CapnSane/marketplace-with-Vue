@@ -7,8 +7,8 @@
 <script>
 export default {
   data: () => ({
-    buttonText: 'Search Cards',
-  }),
+    buttonText: 'Search Cards'
+  })
 };
 </script>
 <style lang="scss" scoped>

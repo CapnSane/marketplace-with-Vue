@@ -3,6 +3,7 @@ import Home from '../views/Home.vue';
 import Login from '../views/Login.vue';
 import Signup from '../views/Signup.vue';
 import Shop from '../views/Shop.vue';
+import Account from '../views/Account.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -24,6 +25,14 @@ const routes: Array<RouteRecordRaw> = [
     path: '/shop',
     name: 'Shop',
     component: Shop,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/account',
+    name: 'Account',
+    component: Account,
     meta: {
       requiresAuth: true
     }

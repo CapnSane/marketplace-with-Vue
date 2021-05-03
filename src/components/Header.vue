@@ -3,6 +3,9 @@
     <div class="header-div">
       <div class="title-div">
         <router-link class="title" to="/">Hallowed Grounds Marketplace</router-link>
+        <div class="cart-div">
+          <router-link class="cart-text" to="/cart">&#x1F6D2</router-link>
+        </div>
       </div>
       <div class="wrapper">
         <div class="search">
@@ -17,9 +20,6 @@
           ><router-link class="account-button" to="/account"> {{ customer }} </router-link><span>!</span>
           <span class="logout-button" @click="logoutHandler">Logout</span>
         </div>
-        <!-- <div>
-          <router-link class="cart-button" to="/cart"><img /></router-link>
-        </div> -->
       </div>
     </div>
   </div>
@@ -37,7 +37,7 @@ export default {
   },
   setup() {
     const auth = useAuth();
-    const customer = computed(() => auth.state.name);
+    const customer = computed(() => auth.state.username);
     const isLoggedIn = computed(() => auth.state.token);
     const logoutHandler = () => {
       auth.actions.logout();
@@ -58,7 +58,7 @@ export default {
 #header {
   // display: flex;
   // flex-wrap: wrap;
-  // height: 70px;
+  // height: 50%;
   background-color: rgba(171, 0, 171, 0.3);
 
   a {
@@ -73,6 +73,18 @@ export default {
 
 .header-div {
   margin-left: 20px;
+}
+
+.cart-div {
+  float: right;
+  padding: 10px 20px 0 0;
+  font-size: 40px;
+  display: grid;
+  outline: none;
+}
+
+.cart-text {
+  outline: none;
 }
 
 .account-button {
@@ -104,7 +116,6 @@ export default {
 }
 
 .title {
-  display: flex;
   left: 10px;
   // margin-left: 10px;
   // float: left;

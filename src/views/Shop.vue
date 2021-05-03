@@ -2,7 +2,9 @@
   <div id="home" class="home overflow-cards flex flex-wrap center">
     <div class="div-cards" v-for="cartinhas in list" :key="cartinhas.id">
       <img class="cards" :src="require(`@/assets/${cartinhas.img}`)" :alt="cartinhas.name" />
-      <p class="price">US${{ cartinhas.price }} <button class="buy-button">BUY!</button></p>
+      <p class="price">
+        US${{ cartinhas.price }} <button @click="buyHandler" class="buy-button">BUY!</button>
+      </p>
     </div>
   </div>
   <div id="home" class="home">
@@ -14,6 +16,7 @@
 import useCards from '@/modules/cards';
 import { computed } from 'vue';
 import Carousel from '@/components/Carousel.vue';
+// import useMe from '@/modules/me';
 
 export default {
   components: {
@@ -22,10 +25,23 @@ export default {
   setup() {
     const cards = useCards();
     const list = computed(() => cards.state.list);
+    // const me = useMe();
+
+    // const buyHandler = (cardo: card) => {
+    //   me.mutations.addCardToCart(cardo);
+    // };
+
+    // const sellHandler = (cardo: card) => {
+    //   console.log('sell', cardo);
+    //   me.actions.sell(cardo);
+    // };
+
     cards.actions.loadCards();
 
     return {
       list
+      // buyHandler,
+      // sellHandler
     };
   }
 };
