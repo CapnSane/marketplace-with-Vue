@@ -22,7 +22,7 @@
 
       <div>
         <div class="slide-div">
-          <router-link class="no-decoration" to="/shop/#">
+          <router-link class="no-decoration" to="/shop/?colorName=red#">
             <img class="slide-img" src="@/assets/red.jpg" alt="Bloody Gorge" />
             <div class="slide-title">
               Bloody Gorge
@@ -32,7 +32,7 @@
       </div>
       <div>
         <div class="slide-div">
-          <router-link class="no-decoration" to="/shop/#">
+          <router-link class="no-decoration" to="/shop/?colorName=purple#">
             <img class="slide-img" src="@/assets/purple.jpg" alt="Dread Spot" />
             <div class="slide-title">
               Dread Spot
@@ -42,7 +42,7 @@
       </div>
       <div>
         <div class="slide-div">
-          <router-link class="no-decoration" to="/shop/#">
+          <router-link class="no-decoration" to="/shop/?colorName=blue#">
             <img class="slide-img" src="@/assets/blue.jpg" alt="Holy Ground" />
             <div class="slide-title">
               Holy Ground
@@ -52,8 +52,12 @@
       </div>
       <div>
         <div class="slide-div">
-          <router-link class="no-decoration" to="/shop/#">
-            <img class="slide-img" src="@/assets/green.jpg" alt="Extra grounds" />
+          <router-link class="no-decoration" to="/shop/?colorName=green#">
+            <img
+              class="slide-img"
+              src="@/assets/green.jpg"
+              alt="Extra grounds"
+            />
             <div class="slide-title">
               Extra grounds
             </div>
@@ -62,8 +66,12 @@
       </div>
       <div>
         <div class="slide-div">
-          <router-link class="no-decoration" to="/shop/#">
-            <img class="slide-img" src="@/assets/yellow.jpg" alt="Extra braves" />
+          <router-link class="no-decoration" to="/shop/?colorName=yellow#">
+            <img
+              class="slide-img"
+              src="@/assets/yellow.jpg"
+              alt="Extra braves"
+            />
             <div class="slide-title">
               Extra braves
             </div>
