@@ -14,7 +14,7 @@ This project is partially done, I need to do many things yet. The project is jus
 
 ### The deployment
 
-For now, the deployment was done using Vercel, that is a great choice when we want visualise whether the application is working or not. You can see it by clicking [Marketplace in Vue](https://marketplace-with-vue-seven.vercel.app/).
+For now, the deployment was done using _Vercel_, that is a great choice when we want visualise whether the application is working or not. You can see it by clicking <a href="https://marketplace-with-vue-seven.vercel.app/" alt="Marketplace in Vue" target="_blank"> Marketplace in Vue</a>.
 
 #### The rules for this project
 
